@@ -13,11 +13,11 @@ private:
 
     int m_day, m_month, m_year;//дата (текущая)
 public:
-    DBDate(string date);//формат строки: dd.mm.yyyy
+    explicit DBDate(const string &date);//формат строки: dd.mm.yyyy
     DBDate(int d, int m, int y) : m_day(d), m_month(m), m_year(y) {};
 
     DBDate() : m_day(0), m_month(0), m_year(0) {};//конструктор по умолчанию
-    DBDate(const DBDate &dat) : m_day(dat.m_day), m_month(dat.m_month), m_year(dat.m_year) {}
+    DBDate(const DBDate &dat) = default;
 
     int GetDay() const;
 

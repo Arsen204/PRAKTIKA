@@ -12,7 +12,7 @@ int DBDate::GetYear() const {
     return m_year;
 }
 
-DBDate::DBDate(string date) {
+DBDate::DBDate(const string &date) {
     m_day = stoi(date.substr(0, 2));
     m_month = stoi(date.substr(3, 2));
     m_year = stoi(date.substr(6, 4));
@@ -69,7 +69,10 @@ bool DBDate::operator!=(const DBDate &date) const {
 }
 
 int DBDate::DaysInCurYear() const {
-    return (DBDate(*this) - DBDate(1,1,m_year));
+    int x = m_day;
+    for (int i = 1; i < m_month; ++i)
+        x += DBDate::GetDaysInMonth(i, m_year);
+    return x;
 }
 
 int DBDate::operator-(const DBDate &date) const {
