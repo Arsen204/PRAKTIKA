@@ -25,7 +25,6 @@ int menu(){
 }
 
 int main(){
-    //some changes
     /*system("chcp 1251>nul");
     string dbName("LibraryTxt");
     cout<<dbName<<endl;
