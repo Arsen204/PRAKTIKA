@@ -3,4 +3,4 @@ project(PRAKTIKA)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(PRAKTIKA main.cpp DBDate.h DBDate.cpp)
+add_executable(PRAKTIKA main.cpp DBDate.cpp)
